@@ -50,8 +50,8 @@ func TestAKV(t *testing.T) {
 	keyVault.Name.Expected = fmt.Sprintf("%s-%s", akvNamePrefix, uniqueId)
 
 	terraformOptions := generateTerraformOptions(map[string]interface{}{
-		"resourc e_group_name": resourceGroupName,
-		"akv_name":             keyVault.Name.Expected,
+		"resource_group_name": resourceGroupName,
+		"akv_name":            keyVault.Name.Expected,
 	})
 	defer terraform.Destroy(t, &terraformOptions)
 

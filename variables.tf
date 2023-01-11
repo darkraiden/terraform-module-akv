@@ -2,7 +2,7 @@ variable "akv_name" {
   type        = string
   description = "The name of the Key Vault"
   validation {
-    condition = (length(var.akv_name) >= 3 && length(var.akv_name) <= 24) && can(regex("[A-Za-z0-9-]", var.akv_name))
+    condition     = (length(var.akv_name) >= 3 && length(var.akv_name) <= 24) && can(regex("[A-Za-z0-9-]", var.akv_name))
     error_message = "akv_name must contain alphanumeric characters and dashes and must be between 3-24 chars"
   }
 }
@@ -13,7 +13,7 @@ variable "resource_group_name" {
 }
 
 variable "tenant_id" {
-  type = string
+  type        = string
   description = "The ID of the tenant the Key Vault is deployed in"
 }
 
@@ -52,4 +52,15 @@ variable "sku_name" {
     condition     = can(regex(("standard|premium"), var.sku_name))
     error_message = "only 'standard' and 'premium' are valid values for `sku_name`"
   }
+}
+
+variable "access_policies" {
+  type = list(object({
+    object_id               = string
+    certificate_permissions = optional(list(string))
+    key_permissions         = optional(list(string))
+    secret_permissions      = optional(list(string))
+  }))
+  description = "[Optional] List of objects to create access policies to be applied to the Key Vault with the object_id as the key"
+  default     = []
 }
