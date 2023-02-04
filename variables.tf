@@ -34,7 +34,7 @@ variable "soft_delete_retention_days" {
   default     = 7
   validation {
     condition     = var.soft_delete_retention_days >= 7 && var.soft_delete_retention_days <= 90
-    error_message = "`soft_delete_retention_days` must be a valye between 7 and 90"
+    error_message = "`soft_delete_retention_days` must be a value between 7 and 90"
   }
 }
 

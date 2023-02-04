@@ -3,9 +3,9 @@ module github.com/darkraiden/terraform-module-akv/tests
 go 1.19
 
 require (
-	github.com/gruntwork-io/terratest v0.41.7
-	github.com/joho/godotenv v1.4.0
-	github.com/stretchr/testify v1.7.0
+	github.com/darkraiden/tthelper v1.0.0
+	github.com/gruntwork-io/terratest v0.41.9
+	github.com/stretchr/testify v1.8.1
 )
 
 require (
@@ -55,5 +55,5 @@ require (
 	google.golang.org/genproto v0.0.0-20210602131652-f16073e35f0c // indirect
 	google.golang.org/grpc v1.38.0 // indirect
 	google.golang.org/protobuf v1.26.0 // indirect
-	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
