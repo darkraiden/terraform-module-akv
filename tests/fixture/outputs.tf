@@ -9,3 +9,7 @@ output "akv_id" {
 output "akv_uri" {
   value = module.akv.akv_uri
 }
+
+output "access_policies_object_ids" {
+  value = module.akv.access_policies_object_ids
+}

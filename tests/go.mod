@@ -3,7 +3,7 @@ module github.com/darkraiden/terraform-module-akv/tests
 go 1.19
 
 require (
-	github.com/darkraiden/tthelper v1.0.0
+	github.com/darkraiden/tthelper v1.1.0
 	github.com/gruntwork-io/terratest v0.41.9
 	github.com/stretchr/testify v1.8.1
 )

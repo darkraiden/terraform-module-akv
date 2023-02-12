@@ -6,11 +6,12 @@ resource "azurerm_resource_group" "this" {
 }
 
 module "akv" {
-  source              = "../.."
-  resource_group_name = azurerm_resource_group.this.name
-  akv_name            = var.akv_name
-  location            = azurerm_resource_group.this.location
-  tenant_id           = var.tenant_id
+  source               = "../.."
+  resource_group_name  = azurerm_resource_group.this.name
+  akv_name             = var.akv_name
+  location             = azurerm_resource_group.this.location
+  tenant_id            = var.tenant_id
+  is_rbac_auth_enabled = var.is_rbac_auth_enabled
 
   access_policies = [
     {

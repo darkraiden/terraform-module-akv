@@ -64,3 +64,9 @@ variable "access_policies" {
   description = "[Optional] List of objects to create access policies to be applied to the Key Vault with the object_id as the key"
   default     = []
 }
+
+variable "is_rbac_auth_enabled" {
+  type        = bool
+  description = "[Optional] Whether RBAC Authorization is enabled for this Key Vault"
+  default     = false
+}
